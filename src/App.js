@@ -39,6 +39,12 @@ const MyComponent = () => {
       setDownloadLink('Yuklab olish');
       setMinutes('daqiqa');
     }
+    else if (lang.toLowerCase() === 'en') {
+      setOrderNumTxt('Quality assessment code');
+      setWaitTimeTxt('Waiting time');
+      setDownloadLink('Download');
+      setMinutes('minutes');
+    }
   }, []);
 
   const handleDownloadPDF = async () => {
