@@ -72,7 +72,7 @@ const MyComponent = () => {
           </div>
         </div>
         <div className='main'>
-          <h1>{ticketNum}</h1>
+          <div className='tnum'>{ticketNum}</div> 
           <h2>{orderNumTxt}: {orderNum}</h2>
           <h2>{waitTimeTxt}: {waitTime} {minutes}</h2>
         </div>

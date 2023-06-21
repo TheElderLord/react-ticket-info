@@ -24,8 +24,11 @@ body{
   flex-direction: column;
   text-align: center;
 }
-.main h1{
+.main .tnum{
+  margin: 1rem;
   font-size: 30vw;
+  font-weight: bold;
+  
 }
 
 .footer{
@@ -34,7 +37,7 @@ body{
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .footer button{
   padding: 1rem 2rem 1rem 2rem;
