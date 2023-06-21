@@ -73,6 +73,12 @@ const MyComponent = () => {
       </div>
       <div className='footer'>
         <button onClick={handleDownloadPDF}>{downloadLink}</button>
+
+        <div className='bass'>
+        <a href='https://bass-technology.kz/' >
+            <img src='/images/bass.png' alt='Bass Technology' />
+        </a>
+        </div>
       </div>
     </div>
   );
