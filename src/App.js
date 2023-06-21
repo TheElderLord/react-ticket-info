@@ -1,17 +1,8 @@
-import React, { useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
-// import { PDFViewer, PDFDownloadLink, Document, Page, StyleSheet } from '@react-pdf/renderer';
 import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
-// const styles = StyleSheet.create({
-//   page: {
-//     flexDirection: 'row',
-//     backgroundColor: '#E4E4E4'
-//   },
-//   content: {
-//     padding: 10
-//   }
-// });
 const MyComponent = () => {
   const pdfContainerRef = useRef(null);
 
@@ -25,10 +16,7 @@ const MyComponent = () => {
   const [minutes, setMinutes] = useState('');
 
   useEffect(() => {
-    // Get the query parameters from the URL
     const queryParams = new URLSearchParams(window.location.search);
-
-    // Access individual query parameters
     let time = queryParams.get('time');
     const ticket = queryParams.get('number');
     const wtime = queryParams.get('waittime');
@@ -52,19 +40,15 @@ const MyComponent = () => {
       setMinutes('daqiqa');
     }
   }, []);
+
   const handleDownloadPDF = async () => {
     try {
-      // Create a canvas from the HTML content
       const canvas = await html2canvas(pdfContainerRef.current);
+      const imageData = canvas.toDataURL('image/png');
 
-      // Convert the canvas to a data URL representing the PDF file
-      const dataUrl = canvas.toDataURL();
-
-      // Trigger the download
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.download = 'content.pdf';
-      link.click();
+      const pdf = new jsPDF();
+      pdf.addImage(imageData, 'PNG', 10, 10, 190, 0);
+      pdf.save('content.pdf');
     } catch (error) {
       console.error('Error creating PDF:', error);
     }
@@ -72,29 +56,23 @@ const MyComponent = () => {
 
   return (
     <div className='container'>
-      <div ref= {pdfContainerRef} className='pdf-container'>
-      <div className='header'>
-        <div className='logo'>
-        <img src='/images/logo.png' alt='DDD'/>
-        </div>
-        <div className='time'>
-         <h3>
-        {time}
-         </h3>
+      <div ref={pdfContainerRef} className='pdf-container'>
+        <div className='header'>
+          <div className='logo'>
+            <img src='/images/logo.png' alt='DDD' />
           </div>
-
+          <div className='time'>
+            <h3>{time}</h3>
+          </div>
         </div>
-
-      <div className='main'>
-        <div>
-        <h1>{ticketNum}</h1>
-        <h2>{orderNumTxt}: {orderNum}</h2> 
-        <h2>{waitTimeTxt}: {waitTime} {minutes}</h2>
+        <div className='main'>
+          <h1>{ticketNum}</h1>
+          <h2>{orderNumTxt}: {orderNum}</h2>
+          <h2>{waitTimeTxt}: {waitTime} {minutes}</h2>
         </div>
       </div>
-     </div>
       <div className='footer'>
-      <button onClick={handleDownloadPDF}>{downloadLink}</button>
+        <button onClick={handleDownloadPDF}>{downloadLink}</button>
       </div>
     </div>
   );
