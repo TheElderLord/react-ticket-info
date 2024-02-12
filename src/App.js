@@ -33,11 +33,11 @@ const MyComponent = () => {
       setWaitTimeTxt('Время ожидания');
       setDownloadLink('Скачать');
       setMinutes('минут');
-    } else if (lang.toLowerCase() === 'uz') {
-      setOrderNumTxt('Sifatni baholash kodi');
-      setWaitTimeTxt('Kutish vaqti');
-      setDownloadLink('Yuklab olish');
-      setMinutes('daqiqa');
+    } else if (lang.toLowerCase() === 'kz') {
+      setOrderNumTxt('Сапаны бағалау коды');
+      setWaitTimeTxt('Күту уақыты');
+      setDownloadLink('Жүктеу');
+      setMinutes('минут');
     }
     else if (lang.toLowerCase() === 'en') {
       setOrderNumTxt('Quality assessment code');
