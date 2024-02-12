@@ -65,7 +65,7 @@ const MyComponent = () => {
       <div ref={pdfContainerRef} className='pdf-container'>
         <div className='header'>
           <div className='logo'>
-            <img src='/images/logo.png' alt='DDD' />
+            <img src='/images/halyk.png' alt='DDD' />
           </div>
           <div className='time'>
             <h3>{time}</h3>
