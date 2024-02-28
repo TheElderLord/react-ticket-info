@@ -12,7 +12,7 @@ const MyComponent = () => {
   const [orderNumTxt, setOrderNumTxt] = useState('');
   const [waitTime, setWaitTime] = useState('');
   const [waitTimeTxt, setWaitTimeTxt] = useState('');
-  const [downloadLink, setDownloadLink] = useState('');
+  // const [downloadLink, setDownloadLink] = useState('');
   const [minutes, setMinutes] = useState('');
 
   useEffect(() => {
