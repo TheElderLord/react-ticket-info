@@ -32,18 +32,18 @@ const MyComponent = () => {
     if (lang.toLowerCase() === 'ru') {
       setOrderNumTxt('Код для оценки качества');
       setWaitTimeTxt('Время ожидания');
-      setDownloadLink('Скачать');
+      // setDownloadLink('Скачать');
       setMinutes('минут');
     } else if (lang.toLowerCase() === 'kz') {
       setOrderNumTxt('Сапаны бағалау коды');
       setWaitTimeTxt('Күту уақыты');
-      setDownloadLink('Жүктеу');
+      // setDownloadLink('Жүктеу');
       setMinutes('минут');
     }
     else if (lang.toLowerCase() === 'en') {
       setOrderNumTxt('Quality assessment code');
       setWaitTimeTxt('Waiting time');
-      setDownloadLink('Download');
+      // setDownloadLink('Download');
       setMinutes('minutes');
     }
   }catch(err){
