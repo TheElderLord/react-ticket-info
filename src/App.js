@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+// import html2canvas from 'html2canvas';
+// import jsPDF from 'jspdf';
 
 const MyComponent = () => {
   const pdfContainerRef = useRef(null);
@@ -16,6 +16,7 @@ const MyComponent = () => {
   const [minutes, setMinutes] = useState('');
 
   useEffect(() => {
+    try{
     const queryParams = new URLSearchParams(window.location.search);
     let time = queryParams.get('time');
     const ticket = queryParams.get('number');
@@ -45,20 +46,23 @@ const MyComponent = () => {
       setDownloadLink('Download');
       setMinutes('minutes');
     }
+  }catch(err){
+    console.log(err);
+  }
   }, []);
 
-  const handleDownloadPDF = async () => {
-    try {
-      const canvas = await html2canvas(pdfContainerRef.current);
-      const imageData = canvas.toDataURL('image/png');
+  // const handleDownloadPDF = async () => {
+  //   try {
+  //     const canvas = await html2canvas(pdfContainerRef.current);
+  //     const imageData = canvas.toDataURL('image/png');
 
-      const pdf = new jsPDF();
-      pdf.addImage(imageData, 'PNG', 10, 10, 190, 0);
-      pdf.save('content.pdf');
-    } catch (error) {
-      console.error('Error creating PDF:', error);
-    }
-  };
+  //     const pdf = new jsPDF();
+  //     pdf.addImage(imageData, 'PNG', 10, 10, 190, 0);
+  //     pdf.save('content.pdf');
+  //   } catch (error) {
+  //     console.error('Error creating PDF:', error);
+  //   }
+  // };
 
   return (
     <div className='container'>
