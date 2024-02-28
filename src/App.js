@@ -77,7 +77,7 @@ const MyComponent = () => {
           <h2>{waitTimeTxt}: {waitTime} {minutes}</h2>
         </div>
       </div>
-      <div className='footer'>
+      {/* <div className='footer'>
         <button onClick={handleDownloadPDF}>{downloadLink}</button>
 
         <div className='bass'>
@@ -85,7 +85,7 @@ const MyComponent = () => {
             <img src='/images/bass.png' alt='Bass Technology' />
         </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
