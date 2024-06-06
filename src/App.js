@@ -6,7 +6,7 @@ import "./App.css";
 const MyComponent = () => {
   const pdfContainerRef = useRef(null);
 
-  const [time, setTime] = useState("");
+  // const [time, setTime] = useState("");
   const [ticketNum, setTicketNum] = useState("");
   const [orderNum, setOrderNum] = useState("");
   const [orderNumTxt, setOrderNumTxt] = useState("");
@@ -19,14 +19,14 @@ const MyComponent = () => {
   useEffect(() => {
     try {
       const queryParams = new URLSearchParams(window.location.search);
-      let time = queryParams.get("time");
+      // let time = queryParams.get("time");
       const ticket = queryParams.get("number");
       const wtime = queryParams.get("waittime");
       const order = queryParams.get("order");
       const lang = queryParams.get("lang");
       const serviceName = queryParams.get("servicename")
       // time = time.split(" ");
-      setTime(time);
+      // setTime(time);
       setTicketNum(ticket);
       setWaitTime(wtime);
       setOrderNum(order);
