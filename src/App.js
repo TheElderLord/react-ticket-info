@@ -1,54 +1,56 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './App.css';
+import React, { useEffect, useState, useRef } from "react";
+import "./App.css";
 // import html2canvas from 'html2canvas';
 // import jsPDF from 'jspdf';
 
 const MyComponent = () => {
   const pdfContainerRef = useRef(null);
 
-  const [time, setTime] = useState('');
-  const [ticketNum, setTicketNum] = useState('');
-  const [orderNum, setOrderNum] = useState('');
-  const [orderNumTxt, setOrderNumTxt] = useState('');
-  const [waitTime, setWaitTime] = useState('');
-  const [waitTimeTxt, setWaitTimeTxt] = useState('');
+  const [time, setTime] = useState("");
+  const [ticketNum, setTicketNum] = useState("");
+  const [orderNum, setOrderNum] = useState("");
+  const [orderNumTxt, setOrderNumTxt] = useState("");
+  const [waitTime, setWaitTime] = useState("");
+  const [waitTimeTxt, setWaitTimeTxt] = useState("");
+  const [serviceName, setserviceName] = useState("");
   // const [downloadLink, setDownloadLink] = useState('');
-  const [minutes, setMinutes] = useState('');
+  const [minutes, setMinutes] = useState("");
 
   useEffect(() => {
-    try{
-    const queryParams = new URLSearchParams(window.location.search);
-    let time = queryParams.get('time');
-    const ticket = queryParams.get('number');
-    const wtime = queryParams.get('waittime');
-    const order = queryParams.get('order');
-    const lang = queryParams.get('lang');
-    time = time.split(' ');
-    setTime(time[3]);
-    setTicketNum(ticket);
-    setWaitTime(wtime);
-    setOrderNum(order);
+    try {
+      const queryParams = new URLSearchParams(window.location.search);
+      let time = queryParams.get("time");
+      const ticket = queryParams.get("number");
+      const wtime = queryParams.get("waittime");
+      const order = queryParams.get("order");
+      const lang = queryParams.get("lang");
+      const serviceName = queryParams.get("servicename")
+      // time = time.split(" ");
+      setTime(time);
+      setTicketNum(ticket);
+      setWaitTime(wtime);
+      setOrderNum(order);
+      setserviceName(serviceName)
 
-    if (lang.toLowerCase() === 'ru') {
-      setOrderNumTxt('Код для оценки качества');
-      setWaitTimeTxt('Время ожидания');
-      // setDownloadLink('Скачать');
-      setMinutes('минут');
-    } else if (lang.toLowerCase() === 'kz') {
-      setOrderNumTxt('Сапаны бағалау коды');
-      setWaitTimeTxt('Күту уақыты');
-      // setDownloadLink('Жүктеу');
-      setMinutes('минут');
+      if (lang.toLowerCase() === "ru") {
+        setOrderNumTxt("Код для оценки качества");
+        setWaitTimeTxt("Время ожидания");
+        // setDownloadLink('Скачать');
+        setMinutes("минут");
+      } else if (lang.toLowerCase() === "kz") {
+        setOrderNumTxt("Сапаны бағалау коды");
+        setWaitTimeTxt("Күту уақыты");
+        // setDownloadLink('Жүктеу');
+        setMinutes("минут");
+      } else if (lang.toLowerCase() === "en") {
+        setOrderNumTxt("Quality assessment code");
+        setWaitTimeTxt("Waiting time");
+        // setDownloadLink('Download');
+        setMinutes("minutes");
+      }
+    } catch (err) {
+      console.log(err);
     }
-    else if (lang.toLowerCase() === 'en') {
-      setOrderNumTxt('Quality assessment code');
-      setWaitTimeTxt('Waiting time');
-      // setDownloadLink('Download');
-      setMinutes('minutes');
-    }
-  }catch(err){
-    console.log(err);
-  }
   }, []);
 
   // const handleDownloadPDF = async () => {
@@ -65,20 +67,28 @@ const MyComponent = () => {
   // };
 
   return (
-    <div className='container'>
-      <div ref={pdfContainerRef} className='pdf-container'>
-        <div className='header'>
-          <div className='logo'>
-            <img src='/images/halyk.png' alt='DDD' />
+    <>
+    <div className="container">
+      <div ref={pdfContainerRef} className="pdf-container">
+        <div className="header">
+          <div className="logo">
+            <img src="/images/halyk.png" alt="DDD" />
           </div>
-          <div className='time'>
+          <div className="serviceName">
+            <h1>{serviceName}</h1>
+          </div>
+          <div className="time">
             <h3>{time}</h3>
           </div>
         </div>
-        <div className='main'>
-          <div className='tnum'>{ticketNum}</div> 
-          <h2>{orderNumTxt}: {orderNum}</h2>
-          <h2>{waitTimeTxt}: {waitTime} {minutes}</h2>
+        <div className="main">
+          <div className="tnum">{ticketNum}</div>
+          <h2>
+            {orderNumTxt}: {orderNum}
+          </h2>
+          <h2>
+            {waitTimeTxt}: {waitTime} {minutes}
+          </h2>
         </div>
       </div>
       {/* <div className='footer'>
@@ -91,6 +101,7 @@ const MyComponent = () => {
         </div>
       </div> */}
     </div>
+    </>
   );
 };
 
