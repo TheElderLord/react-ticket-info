@@ -72,14 +72,14 @@ const MyComponent = () => {
       <div ref={pdfContainerRef} className="pdf-container">
         <div className="header">
           <div className="logo">
-            <img src="/images/halyk.png" alt="DDD" />
+            <img src="/images/bereke.png" alt="DDD" />
           </div>
           <div className="serviceName">
             <h1>{serviceName}</h1>
           </div>
-          <div className="time">
+          {/* <div className="time">
             <h3>{time}</h3>
-          </div>
+          </div> */}
         </div>
         <div className="main">
           <div className="tnum">{ticketNum}</div>
