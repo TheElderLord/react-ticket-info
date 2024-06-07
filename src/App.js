@@ -22,7 +22,10 @@ const MyComponent = () => {
       // let time = queryParams.get("time");
       const ticket = queryParams.get("number");
       const wtime = queryParams.get("waittime");
-      const order = queryParams.get("order");
+      let order = ""
+      if(queryParams.get("order")!=null){
+         order = queryParams.get("order");
+      }
       const lang = queryParams.get("lang");
       const serviceName = queryParams.get("servicename")
       // time = time.split(" ");
@@ -83,9 +86,11 @@ const MyComponent = () => {
         </div>
         <div className="main">
           <div className="tnum">{ticketNum}</div>
-          <h2>
-            {orderNumTxt}: {orderNum}
-          </h2>
+          {orderNum && (
+            <h2>
+              {orderNumTxt}: {orderNum}
+            </h2>
+          )}
           <h2>
             {waitTimeTxt}: {waitTime} {minutes}
           </h2>
