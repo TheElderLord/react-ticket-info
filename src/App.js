@@ -73,7 +73,7 @@ const MyComponent = () => {
         </div>
         <div className='main'>
           <div className='tnum'>{ticketNum}</div> 
-          <h2>{orderNumTxt}: {orderNum}</h2>
+          {/* <h2>{orderNumTxt}: {orderNum}</h2> */}
           <h2>{waitTimeTxt}: {waitTime} {minutes}</h2>
         </div>
       </div>
