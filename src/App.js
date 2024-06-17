@@ -8,8 +8,8 @@ const MyComponent = () => {
 
   const [time, setTime] = useState('');
   const [ticketNum, setTicketNum] = useState('');
-  const [orderNum, setOrderNum] = useState('');
-  const [orderNumTxt, setOrderNumTxt] = useState('');
+  // const [orderNum, setOrderNum] = useState('');
+  // const [orderNumTxt, setOrderNumTxt] = useState('');
   const [waitTime, setWaitTime] = useState('');
   const [waitTimeTxt, setWaitTimeTxt] = useState('');
   const [downloadLink, setDownloadLink] = useState('');
