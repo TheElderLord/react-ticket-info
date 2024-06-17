@@ -20,27 +20,27 @@ const MyComponent = () => {
     let time = queryParams.get('time');
     const ticket = queryParams.get('number');
     const wtime = queryParams.get('waittime');
-    const order = queryParams.get('order');
+    // const order = queryParams.get('order');
     const lang = queryParams.get('lang');
     time = time.split(' ');
     setTime(time[3]);
     setTicketNum(ticket);
     setWaitTime(wtime);
-    setOrderNum(order);
+    // setOrderNum(order);
 
     if (lang.toLowerCase() === 'ru') {
-      setOrderNumTxt('Код для оценки качества');
+      // setOrderNumTxt('Код для оценки качества');
       setWaitTimeTxt('Время ожидания');
       setDownloadLink('Скачать');
       setMinutes('минут');
     } else if (lang.toLowerCase() === 'uz') {
-      setOrderNumTxt('Sifatni baholash kodi');
+      // setOrderNumTxt('Sifatni baholash kodi');
       setWaitTimeTxt('Kutish vaqti');
       setDownloadLink('Yuklab olish');
       setMinutes('daqiqa');
     }
     else if (lang.toLowerCase() === 'en') {
-      setOrderNumTxt('Quality assessment code');
+      // setOrderNumTxt('Quality assessment code');
       setWaitTimeTxt('Waiting time');
       setDownloadLink('Download');
       setMinutes('minutes');
