@@ -31,7 +31,7 @@ const MyComponent = () => {
       // time = time.split(" ");
       // setTime(time);
       setTicketNum(ticket);
-      setWaitTime(wtime);
+      // setWaitTime(wtime);
       setOrderNum(order);
       setserviceName(serviceName)
 
