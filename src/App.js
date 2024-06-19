@@ -21,7 +21,7 @@ const MyComponent = () => {
       const queryParams = new URLSearchParams(window.location.search);
       // let time = queryParams.get("time");
       const ticket = queryParams.get("number");
-      const wtime = queryParams.get("waittime");
+      // const wtime = queryParams.get("waittime");
       let order = ""
       if(queryParams.get("order")!=null){
          order = queryParams.get("order");
