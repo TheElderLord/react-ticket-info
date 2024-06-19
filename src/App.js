@@ -10,11 +10,11 @@ const MyComponent = () => {
   const [ticketNum, setTicketNum] = useState("");
   const [orderNum, setOrderNum] = useState("");
   const [orderNumTxt, setOrderNumTxt] = useState("");
-  const [waitTime, setWaitTime] = useState("");
-  const [waitTimeTxt, setWaitTimeTxt] = useState("");
+  // const [waitTime, setWaitTime] = useState("");
+  // const [waitTimeTxt, setWaitTimeTxt] = useState("");
   const [serviceName, setserviceName] = useState("");
   // const [downloadLink, setDownloadLink] = useState('');
-  const [minutes, setMinutes] = useState("");
+  // const [minutes, setMinutes] = useState("")
 
   useEffect(() => {
     try {
@@ -37,19 +37,19 @@ const MyComponent = () => {
 
       if (lang.toLowerCase() === "ru") {
         setOrderNumTxt("Код для оценки качества");
-        setWaitTimeTxt("Время ожидания");
+        // setWaitTimeTxt("Время ожидания");
         // setDownloadLink('Скачать');
-        setMinutes("минут");
+        // setMinutes("минут");
       } else if (lang.toLowerCase() === "kz") {
         setOrderNumTxt("Сапаны бағалау коды");
-        setWaitTimeTxt("Күту уақыты");
+        // setWaitTimeTxt("Күту уақыты");
         // setDownloadLink('Жүктеу');
-        setMinutes("минут");
+        // setMinutes("минут");
       } else if (lang.toLowerCase() === "en") {
         setOrderNumTxt("Quality assessment code");
-        setWaitTimeTxt("Waiting time");
+        // setWaitTimeTxt("Waiting time");
         // setDownloadLink('Download');
-        setMinutes("minutes");
+        // setMinutes("minutes");
       }
     } catch (err) {
       console.log(err);
@@ -91,9 +91,9 @@ const MyComponent = () => {
               {orderNumTxt}: {orderNum}
             </h2>
           )}
-          <h2>
+          {/* <h2>
             {waitTimeTxt}: {waitTime} {minutes}
-          </h2>
+          </h2> */}
         </div>
       </div>
       {/* <div className='footer'>
