@@ -27,7 +27,7 @@ const MyComponent = () => {
          order = queryParams.get("order");
       }
       const lang = queryParams.get("lang");
-      const serviceName = queryParams.get("servicename")
+      const serviceName = queryParams.get("servicename").replace("%"," ");
       // time = time.split(" ");
       // setTime(time);
       setTicketNum(ticket);
