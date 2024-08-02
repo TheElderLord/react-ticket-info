@@ -19,7 +19,7 @@ const MyComponent = () => {
   useEffect(() => {
     try {
       const queryParams = new URLSearchParams(window.location.search);
-      const time = queryParams.get("time");
+      const time = queryParams.get("time").replace("%20"," ");
       const ticket = queryParams.get("number");
       // const wtime = queryParams.get("waittime");
       let order = ""
