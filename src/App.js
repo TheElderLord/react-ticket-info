@@ -6,7 +6,7 @@ import "./App.css";
 const MyComponent = () => {
   const pdfContainerRef = useRef(null);
 
-  // const [time, setTime] = useState("");
+  const [time, setTime] = useState("");
   const [ticketNum, setTicketNum] = useState("");
   const [orderNum, setOrderNum] = useState("");
   const [orderNumTxt, setOrderNumTxt] = useState("");
@@ -19,7 +19,7 @@ const MyComponent = () => {
   useEffect(() => {
     try {
       const queryParams = new URLSearchParams(window.location.search);
-      // let time = queryParams.get("time");
+      const time = queryParams.get("time");
       const ticket = queryParams.get("number");
       // const wtime = queryParams.get("waittime");
       let order = ""
@@ -27,9 +27,9 @@ const MyComponent = () => {
          order = queryParams.get("order");
       }
       const lang = queryParams.get("lang");
-      const serviceName = queryParams.get("servicename").replace("%"," ");
+      const serviceName = queryParams.get("servicename").replace("%20"," ");
       // time = time.split(" ");
-      // setTime(time);
+      setTime(time);
       setTicketNum(ticket);
       // setWaitTime(wtime);
       setOrderNum(order);
@@ -77,12 +77,8 @@ const MyComponent = () => {
           <div className="logo">
             <img src="/images/bereke.png" alt="DDD" />
           </div>
-          <div className="serviceName">
-            <h1>{serviceName}</h1>
-          </div>
-          {/* <div className="time">
-            <h3>{time}</h3>
-          </div> */}
+          
+         
         </div>
         <div className="main">
           <div className="tnum">{ticketNum}</div>
@@ -91,6 +87,12 @@ const MyComponent = () => {
               {orderNumTxt}: {orderNum}
             </h2>
           )}
+          <div className="serviceName">
+            <h1>{serviceName}</h1>
+          </div>
+           { <div className="time">
+            <h3>{time}</h3>
+          </div>}
           {/* <h2>
             {waitTimeTxt}: {waitTime} {minutes}
           </h2> */}
