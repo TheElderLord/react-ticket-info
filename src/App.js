@@ -8,8 +8,8 @@ const MyComponent = () => {
 
   const [time, setTime] = useState("");
   const [ticketNum, setTicketNum] = useState("");
-  const [orderNum, setOrderNum] = useState("");
-  const [orderNumTxt, setOrderNumTxt] = useState("");
+  // const [orderNum, setOrderNum] = useState("");
+  // const [orderNumTxt, setOrderNumTxt] = useState("");
   // const [waitTime, setWaitTime] = useState("");
   // const [waitTimeTxt, setWaitTimeTxt] = useState("");
   const [serviceName, setserviceName] = useState("");
@@ -22,35 +22,35 @@ const MyComponent = () => {
       const time = queryParams.get("time").replace("%20"," ");
       const ticket = queryParams.get("number");
       // const wtime = queryParams.get("waittime");
-      let order = ""
-      if(queryParams.get("order")!=null){
-         order = queryParams.get("order");
-      }
-      const lang = queryParams.get("lang");
+      // let order = ""
+      // if(queryParams.get("order")!=null){
+      //    order = queryParams.get("order");
+      // }
+      // const lang = queryParams.get("lang");
       const serviceName = queryParams.get("servicename").replace("%20"," ");
       // time = time.split(" ");
       setTime(time);
       setTicketNum(ticket);
       // setWaitTime(wtime);
-      setOrderNum(order);
+      // setOrderNum(order);
       setserviceName(serviceName)
 
-      if (lang.toLowerCase() === "ru") {
-        setOrderNumTxt("Код для оценки качества");
-        // setWaitTimeTxt("Время ожидания");
-        // setDownloadLink('Скачать');
-        // setMinutes("минут");
-      } else if (lang.toLowerCase() === "kz") {
-        setOrderNumTxt("Сапаны бағалау коды");
-        // setWaitTimeTxt("Күту уақыты");
-        // setDownloadLink('Жүктеу');
-        // setMinutes("минут");
-      } else if (lang.toLowerCase() === "en") {
-        setOrderNumTxt("Quality assessment code");
-        // setWaitTimeTxt("Waiting time");
-        // setDownloadLink('Download');
-        // setMinutes("minutes");
-      }
+      // if (lang.toLowerCase() === "ru") {
+      //   setOrderNumTxt("Код для оценки качества");
+      //   // setWaitTimeTxt("Время ожидания");
+      //   // setDownloadLink('Скачать');
+      //   // setMinutes("минут");
+      // } else if (lang.toLowerCase() === "kz") {
+      //   setOrderNumTxt("Сапаны бағалау коды");
+      //   // setWaitTimeTxt("Күту уақыты");
+      //   // setDownloadLink('Жүктеу');
+      //   // setMinutes("минут");
+      // } else if (lang.toLowerCase() === "en") {
+      //   setOrderNumTxt("Quality assessment code");
+      //   // setWaitTimeTxt("Waiting time");
+      //   // setDownloadLink('Download');
+      //   // setMinutes("minutes");
+      // }
     } catch (err) {
       console.log(err);
     }
@@ -82,11 +82,11 @@ const MyComponent = () => {
         </div>
         <div className="main">
           <div className="tnum">{ticketNum}</div>
-          {orderNum && (
+          {/* {orderNum && (
             <h2>
               {orderNumTxt}: {orderNum}
             </h2>
-          )}
+          )} */}
           <div className="serviceName">
             <h1>{serviceName}</h1>
           </div>
